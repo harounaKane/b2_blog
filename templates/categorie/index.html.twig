@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent() }} Catégorie!{% endblock %}
+
+{% block body %}
+    <h2 class="text-center">Liste catégorie</h2>
+    <table class="table table-striped">
+        <tr class="table-dark">
+            <th>Nom</th>
+            <th>Action</th>
+        </tr>
+
+        {% for categorie in categories %}
+            <tr>
+                <td> {{ categorie.nom }} </td>
+                <td> <a href="{{ path('app_categorie_show', {'id': categorie.id}) }}">Consulter</a> </td>
+            </tr>
+        {% endfor %}
+
+    </table>
+{% endblock %}
+

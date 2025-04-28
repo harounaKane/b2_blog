@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent() }} Catégorie!{% endblock %}
+
+{% block body %}
+    <h2 class="text-center">Catégorie</h2>
+    <table class="table table-striped">
+        <tr class="table-dark">
+            <th>Nom</th>
+            <th>Action</th>
+        </tr>
+
+        <tr>
+            <td> {{ categorie.nom }} </td>
+            <td> <a href="">Delete</a> </td>
+        </tr>
+
+    </table>
+{% endblock %}
+
