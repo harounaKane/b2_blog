@@ -8,5 +8,13 @@
             <th>Libellé</th>
             <th>Action</th>
         </tr>
+        {% for article in articles %}
+            <tr>
+                <td> {{ article.libelle }} </td>
+                <th>
+                    <a href="{{ path('app_article_show', {'id': article.id}) }}">Consulter</a>
+                </th>
+            </tr>
+        {% endfor %}
     </table>
 {% endblock %}
