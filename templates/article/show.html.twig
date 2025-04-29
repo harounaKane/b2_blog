@@ -15,7 +15,7 @@
             <td> {{ article.description }} </td>
             <td> {{ article.createdAt|date("m/d/Y") }} </td>
             <th>
-                <a href="">Consulter</a>
+                <a href="{{ path('app_article_delete', {'id': article.id}) }}">Delete</a>
             </th>
         </tr>
     </table>
