@@ -5,12 +5,15 @@
 {% block body %}
     <table class="table table-strepid">
         <tr class="table-dark">
+        <tr class="table-dark">
             <th>Libellé</th>
+            <th>Catégorie</th>
             <th>Action</th>
         </tr>
         {% for article in articles %}
             <tr>
                 <td> {{ article.libelle }} </td>
+                <td> {{ article.categorie.nom }} </td>
                 <th>
                     <a href="{{ path('app_article_show', {'id': article.id}) }}">Consulter</a>
                 </th>

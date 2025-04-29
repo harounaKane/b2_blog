@@ -7,12 +7,21 @@
     <table class="table table-striped">
         <tr class="table-dark">
             <th>Nom</th>
+            <th>Articles</th>
             <th>Action</th>
         </tr>
+
 
         {% for categorie in categories %}
             <tr>
                 <td> {{ categorie.nom }} </td>
+                <td>
+                    {% for idx, article in categorie.articles %}
+                        {{ article.libelle }}{% if categorie.articles | length - 1 != idx %}, {% endif %}
+                    {% else %}
+                        []
+                    {% endfor %}
+                </td>
                 <td> <a href="{{ path('app_categorie_show', {'id': categorie.id}) }}">Consulter</a> </td>
             </tr>
         {% endfor %}

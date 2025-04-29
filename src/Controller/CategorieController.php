@@ -15,6 +15,7 @@ final class CategorieController extends AbstractController
     {
         // recup toutes les catégorie
         $categories = $categorieRepository->findAll();
+
         
         return $this->render('categorie/index.html.twig', [
             "categories" => $categories
